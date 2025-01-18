@@ -1,0 +1,28 @@
+[velocity@ip-172-31-14-84 ~]$ cat hostpath.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: velpod
+spec:
+  containers:
+  - name: vel-1
+    image: centos
+    command: ["ping", "localhost"]
+    volumeMounts:
+      - name: velvolume
+        mountPath: "/tmp/velocity"
+
+
+  volumes:
+    - name: velvolume
+      hostPath:
+        path: /mnt    
+		
+here the differnce is we are using minikube we need to minikube ssh to check the host path is mounted or not
+
+/mnt will be inside minikube instance not our ec2
+
+[velocity@ip-172-31-14-84 ~]$ minikube ssh
+docker@minikube:~$
+docker@minikube:/home/velocity/aws$ cd /mnt
+docker@minikube:/mnt$ ls -ltr
