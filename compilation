@@ -9,7 +9,7 @@ pipeline {
 		
 		environment {
 						
-						url = "https://github.com/Shantanumajan6/project.git"
+						url = "https://github.com/Shailendraahirkar/project.git"
 		
 		}
 		
