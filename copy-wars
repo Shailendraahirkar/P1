@@ -11,8 +11,8 @@ pipeline {
 	
 	environment {
 						
-						devip = "10.10.1.227"
-						qaip = "10.10.2.45"
+						devip = "10.10.2.238"
+						qaip = "10.10.3.236"
 		
 		}
 	
@@ -21,7 +21,7 @@ pipeline {
 				stage ("COPY_DEV_WAR") {
 				
 					steps {
-								sh "scp -r LoginWebApp.war velocity@${devip}:/mnt/wars"
+								sh "scp -r LoginWebApp.war shailendra@${devip}:/mnt/wars"
 					}
 				
 				}
@@ -29,7 +29,7 @@ pipeline {
 				stage ("COPY_QA_WAR") {
 				
 					steps {
-								sh "scp -r LoginWebApp.war velocity@${qaip}:/mnt/wars"
+								sh "scp -r LoginWebApp.war shailedra@${qaip}:/mnt/wars"
 					}
 				
 				}
